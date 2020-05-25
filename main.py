@@ -16,7 +16,9 @@ with open("students.txt") as textfile:
 for experiment in experiments:
     for student in students:
         os.makedirs(experiment + "/" + student,
-                    exist_ok=True)               # create dir
+                    exist_ok=True)               # create student dir
+        os.makedirs(experiment + "/" + "PDFs",
+                    exist_ok=True)               # create pdfs dir
         os.system("python3 " + experiment + "/" + "generateData" +           # create data
                   experiment + ".py" + " " + student)
         os.system("python3 " + experiment + "/" + "generatepdf" +            # create pdf

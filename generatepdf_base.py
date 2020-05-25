@@ -96,7 +96,7 @@ def createPDF(experiment, name):
 
     """
     # Name of file
-    fileName = experiment + "/" + name + "/" + \
+    fileName = experiment + "/" + "PDFs" + "/" + \
         "Data" + experiment + "_" + name + ".pdf"
     archivo_pdf = SimpleDocTemplate(
         fileName, pagesize=letter, rightMargin=40, leftMargin=40, topMargin=40, bottomMargin=28)
