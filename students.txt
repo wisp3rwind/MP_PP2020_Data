@@ -1,0 +1,6 @@
+# Vorname(n) Name mit Leerzeichen getrennt, bsp.:
+# Max Markus Mustermann
+# Zeilen mit '#' werden nicht beruecksichtigt
+# ______________________________
+Max Mustermann
+# Karl-Theodor Maria Nikolaus Johann Jacob Philipp Franz Joseph Sylvester Buhl-Freiherr von und zu Guttenberg
