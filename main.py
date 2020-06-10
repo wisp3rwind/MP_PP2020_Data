@@ -2,7 +2,7 @@ import os
 import shutil
 
 # List all experiments
-experiments = ["V2", "V8", "V30", "V39", "V4041", "V42", "V64"]
+experiments = ["V2", "V8", "V14", "V30", "V39", "V4041", "V42", "V64"]
 
 # Read out students.txt list
 students = []
