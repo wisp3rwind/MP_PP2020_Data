@@ -11,15 +11,15 @@ np.random.seed(seed)
 
 # _____________________________________________________________________________
 # copper mass [g]
-m_cu = 163 + np.random.normal(3)
+m_cu = 168 + np.random.normal(1)
 # copper mass plus water mass [g]
-m_ges = 230 + np.random.normal(5)
+m_ges = 224.8 + np.random.normal(1)
 # temp before heating [°C]
-T_1 = 21.6 + np.random.normal(0.5)
+T_1 = (214 + np.random.normal(1))/10
 # temp after heating [°C]
-T_2 = 25.6 + np.random.normal(0.5)
+T_2 = (262 + np.random.normal(1))/10
 # diameter of the calorimeter [mm]
-d = 47.8 + np.random.normal(2)
+d = 47.8 + np.random.normal(0.3)
 
 allData = [m_cu, m_ges, T_1, T_2, d]
 np.save(workingDir + "Data" + experiment + "Part1", allData)
