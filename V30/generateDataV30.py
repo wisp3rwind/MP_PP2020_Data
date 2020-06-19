@@ -25,16 +25,16 @@ def B(I):
 
 
 # 1. vary the voltage
-voltage1 = np.linspace(200, 300, 5)
-current1 = np.ones(5)
+voltage1 = np.linspace(200, 280, 3)
+current1 = np.ones(3)
 radii1 = np.sqrt(2 * voltage1 * m_e / (B(current1)**2 * e)
-                 + np.random.normal(loc=0, scale=5e-4, size=len(voltage1)))
+                 + np.random.normal(loc=0, scale=1e-4, size=len(voltage1)))
 
 # 2. vary the current
-voltage2 = np.ones(5) * 250
-current2 = np.linspace(0.8, 1.8, 5)
+voltage2 = np.ones(3) * 250
+current2 = np.linspace(0.8, 1.8, 3)
 radii2 = np.sqrt(2 * voltage2 * m_e / (B(current2)**2 * e)
-                 + np.random.normal(loc=0, scale=5e-4, size=len(voltage2)))
+                 + np.random.normal(loc=0, scale=1e-4, size=len(voltage2)))
 
 voltage = np.concatenate((voltage1, voltage2))
 current = np.concatenate((current1, current2))
@@ -42,4 +42,4 @@ current = np.concatenate((current1, current2))
 diameter = np.round(np.concatenate((radii1, radii2)), 4) * 2 * 100
 
 np.save(workingDir + "Data" + experiment + "Part1",
-        np.array([voltage, current, diameter]))
+        np.array([voltage, current, np.round(diameter,1)]))
