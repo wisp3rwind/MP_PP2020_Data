@@ -14,9 +14,15 @@ np.random.seed(seed)
 
 # distances [cm]
 # voltage [V]
-distances = np.linspace(0, 20, 21)
-voltages = generateLinearData(
-    distances, slope=0.25, intercept=0, noiseStd=0.1, roundTo=2)
+#distances = np.linspace(0, 20, 21)
+distances = np.linspace(0, 50, 26)
+distances2 = np.linspace(16, 34, 10)
+distances3 = np.linspace(36, 50, 8)
+#voltages = generateLinearData(distances, slope=0.25, intercept=0, noiseStd=0.1, roundTo=2)
+voltages1 = np.array([0, 0, 0, 0, 0, 0, 0, 0])
+voltages2 = generateLinearData(distances2, slope=0.247, intercept=-3.7, noiseStd=0.015, roundTo=2)
+voltages3 = generateLinearData(distances3, slope=-0.005, intercept=5.1, noiseStd=0.015, roundTo=2)
+voltages = np.append(voltages1, np.append(voltages2, voltages3))
 
 np.save(workingDir + "Data" + experiment +
         "Part1", np.array([distances, voltages]))
@@ -33,4 +39,4 @@ UPosition3 = generateSinusData(angles, amplitude=0.3, offsetAngle=4 * np.pi/3,
                                noiseStd=0.02, roundTo=2)
 
 np.save(workingDir + "Data" + experiment + "Part2",
-        np.array([angles_in_degree, UPosition1, UPosition2, UPosition3]))
+        np.array([np.round(angles_in_degree,0), UPosition1, UPosition2, UPosition3]))
