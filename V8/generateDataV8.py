@@ -17,7 +17,7 @@ np.random.seed(seed)
 # but the last experiments had a lower value here
 nMeasurement = np.arange(1, 12)
 resonanceLengths = generateLinearData(
-    nMeasurement, slope=6., intercept=0, noiseStd=2, dtype=np.int)
+    nMeasurement, slope=8.57, intercept=0, noiseStd=1, roundTo=1)
 
 np.save(workingDir + "Data" + experiment + "Part1", resonanceLengths)
 
@@ -27,7 +27,7 @@ np.save(workingDir + "Data" + experiment + "Part1", resonanceLengths)
 
 # waveLengths [mm]
 waveLengths = generateLinearData(
-    nMeasurement, slope=8.25, intercept=0, noiseStd=3, dtype=np.int)
+    nMeasurement, slope=8.25, intercept=0, noiseStd=1, dtype=np.int)
 
 np.save(workingDir + "Data" + experiment + "Part2", waveLengths)
 
@@ -38,7 +38,7 @@ np.save(workingDir + "Data" + experiment + "Part2", waveLengths)
 # times [ms] (two way!)
 distances = np.linspace(100, 800, 8)
 times = generateLinearData(
-    distances, slope=2/340., intercept=0, noiseStd=0.3, roundTo=3)
+    distances, slope=2/340., intercept=0, noiseStd=0.3, roundTo=2)
 
 np.save(workingDir + "Data" + experiment +
         "Part3", np.array([distances, times]))
