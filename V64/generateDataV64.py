@@ -33,13 +33,13 @@ np.save(workingDir + "DataV64Nbg",Nbg)
 mu_alu = -0.15
 x_alu = np.linspace(5, 40, 8, dtype=np.int)
 N_alu = generateExpoData(x_alu * 1e-3, N0, mu_alu *
-                         1e2, noiseStd=0.1, dtype=np.int) + Nbg
+                         1e2, noiseStd=0.05, dtype=np.int) + Nbg
 
 np.save(workingDir + "DataV64Alu", np.array([x_alu, N_alu], dtype=np.int))
 
 mu_cu = -0.6
 x_cu = np.linspace(3, 30, 10, dtype=np.int)
 N_cu = generateExpoData(x_cu * 1e-3, N0, mu_cu * 1e2,
-                        noiseStd=0.1, dtype=np.int) + Nbg
+                        noiseStd=0.05, dtype=np.int) + Nbg
 
 np.save(workingDir + "DataV64Cu", np.array([x_cu, N_cu], dtype=np.int))
