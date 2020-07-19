@@ -1,0 +1,24 @@
+# Vorname(n) Name mit Leerzeichen getrennt, bsp.:
+# Max Markus Mustermann
+# Zeilen mit '#' werden nicht beruecksichtigt
+# ______________________________
+Carla Doerr
+Michele Engelhardt
+Rebecca Mittelbrun
+Johanna Mueller
+Philipp Mueller
+Manuel Naab
+Hannah Padberg
+Nico Pfander
+Ann Kristin Rabanus
+Salome Reinartz
+Sigrun Rohling
+Marlene Roll
+Celina Schalloer
+Jan-Luca Schoenfeld
+Niklas Schubert-Pirc
+Sebastian Rolf Strothmann
+Lukas Tadge
+Tessa Carlotta Tomczak
+Katharina Ullrich
+Lisa Wegner

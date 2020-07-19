@@ -1,0 +1,23 @@
+# Vorname(n) Name mit Leerzeichen getrennt, bsp.:
+# Max Markus Mustermann
+# Zeilen mit '#' werden nicht beruecksichtigt
+# ______________________________
+Ahmad Almehasneh
+Theresa Bannasch
+Lars Daniel Becker
+Elisabeth Betous
+Kim Dominique Edelmann
+Sadiye Elceoglu
+Sophie Engler
+Jasmin Freudenstein
+Marie-Luise Guenther
+Robin Gundert
+Johanna Haas
+Elisa Rebekka Hermann
+Chantal Heyse
+Roland Hofer
+Lena Kaehny
+Eva Krampfert
+Sandra Le
+Emely Friederike Maentele
+Alina Mueller
