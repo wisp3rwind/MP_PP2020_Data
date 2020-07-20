@@ -19,7 +19,7 @@ gpdf.addText("Untergrundmessung: Pulszahl = {0}".format(underground))
 gpdf.addSpacer()
 
 gpdf.addText("Aluminium:")
-header = [["Absorberdicke [cm]", "Pulszahl"]]
+header = [["Absorberdicke [mm]", "Pulszahl"]]
 data1 = np.load(workingDir + "DataV64Alu.npy").T
 gpdf.addTable(header, data1)
 gpdf.addSpacer()
