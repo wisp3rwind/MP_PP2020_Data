@@ -1,18 +1,12 @@
 # Code snippets taken from
 # https://stackoverflow.com/questions/48745947/writing-a-csv-file-into-a-pdf-document
 
+import os
 import numpy as np
 from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4, inch, landscape, legal, letter
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Image, Spacer, PageBreak, Table, TableStyle
+from reportlab.lib.pagesizes import inch, letter
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, PageBreak
 from reportlab.lib.styles import getSampleStyleSheet
-
-import os
-import sys
-
-# name = sys.argv[1]
-# experiment = "V2"
-# workingDir = experiment + "/" + name + "/"
 
 # Get de work directory
 cwd = os.getcwd()
@@ -87,7 +81,11 @@ def addTable(header, data):
     elements.append(t)
 
 
-def createPDF(experiment, name):
+def addPagebreak():
+    elements.append(PageBreak())
+
+
+def createPDF(experiment):
     """
     Creates the pdf file
     Args:
@@ -96,8 +94,8 @@ def createPDF(experiment, name):
 
     """
     # Name of file
-    fileName = experiment + "/" + "PDFs" + "/" + \
-        "Data" + experiment + "_" + name + ".pdf"
+    fileName = experiment + "/" + \
+        "Data" + experiment + ".pdf"
     archivo_pdf = SimpleDocTemplate(
         fileName, pagesize=letter, rightMargin=40, leftMargin=40, topMargin=40, bottomMargin=28)
     archivo_pdf.build(elements)

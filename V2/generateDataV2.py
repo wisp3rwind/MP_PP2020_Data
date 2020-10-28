@@ -1,7 +1,7 @@
 import numpy as np
 import sys
-sys.path.insert(0,'/Users/markuswalther/work/Data/Data')
-print(sys.path)
+# sys.path.insert(0,'/Users/markuswalther/work/Data/Data')
+# print(sys.path)
 
 from studentSeed import studentSeed
 from generateData_base import generateLinearData
@@ -42,12 +42,12 @@ np.save(workingDir + "Data" + experiment + "Part1",
 # periods [s]
 
 # Its 10 times the arrays, since in the experimt, 10 periods are measured
-#periods = generateLinearData(
+# periods = generateLinearData(
 #    masses, slope=0.011, intercept=0.28, noiseStd=0.08, roundTo=3) * 10
 periods = np.round(np.sqrt(generateLinearData(
-    masses, slope=0.0134, intercept=0.02, noiseStd=0.02, roundTo=5)) * 10,2)
+    masses, slope=0.0134, intercept=0.02, noiseStd=0.02, roundTo=5)) * 10, 2)
 
-masses=masses.astype(int)
+masses = masses.astype(int)
 # save it to
 np.save(workingDir + "Data" + experiment + "Part2",
         np.array([masses, periods]))
