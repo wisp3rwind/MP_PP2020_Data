@@ -39,6 +39,8 @@ np.save(workingDir + "Data" + experiment + "Part2", waveLengths)
 distances = np.linspace(100, 800, 8)
 times = generateLinearData(
     distances, slope=2/340., intercept=0, noiseStd=0.3, roundTo=2)
+# avoid times less than 0.1 ms
+times = np.maximum(times, 0.1)
 
 np.save(workingDir + "Data" + experiment +
         "Part3", np.array([distances, times]))
