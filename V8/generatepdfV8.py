@@ -26,11 +26,11 @@ for student in students:
     gpdf.addText("Teil 2: Ultraschall")
     gpdf.addText("Ultraschallfrequenz: 40.692 KHz")
     # Show only the last entry (after 10 wavelengths)
-    gpdf.addText("Abstand zwischen 10 Wellenlaengen  : {} mm".format(
-        np.load(workingDir + "DataV8Part2.npy").T[-1]))
-    # header2 = ["Wellenlaengen [mm]"]
-    # data2 = np.load(workingDir + "DataV8Part2.npy").T
-    # gpdf.addTable(header2, data2)
+    # gpdf.addText("Abstand zwischen 10 Wellenlaengen  : {} mm".format(
+    #     np.load(workingDir + "DataV8Part2.npy").T[-1]))
+    header2 = ["Wellenlaengen [mm]"]
+    data2 = np.load(workingDir + "DataV8Part2.npy").T
+    gpdf.addTable(header2, data2)
     gpdf.addSpacer()
 
     gpdf.addText("Teil 3: Echolot Verfahren")
