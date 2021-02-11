@@ -1,4 +1,5 @@
 import os
+import os.path
 import shutil
 from get_students import get_students
 
@@ -10,12 +11,26 @@ students = get_students()
 
 # create directories and fill it with data
 for experiment in experiments:
+    nb_filename = "Auswertung{}.ipynb".format(experiment)
+    data_gen_script = os.path.join(experiment, "generateData{}.py".format(experiment))
+    pdf_gen_script = os.path.join(experiment, "generatepdf{}.py".format(experiment))
+
     for student in students:
-        os.makedirs(experiment + "/" + student,
-                    exist_ok=True)               # create student dir
-        os.system("python3 " + experiment + "/" + "generateData" +           # create data
-                  experiment + ".py" + " " + student)
-        shutil.copy2(experiment + "/Auswertung" + experiment + ".ipynb",
-                     experiment + "/" + student + "/Auswertung" + experiment + ".ipynb")  # copy ipynb
-    os.system("python3 " + experiment + "/" + "generatepdf" +            # create pdf
-              experiment + ".py")
+        student_basedir = os.path.join(experiment, student)
+
+        # create student dir
+        os.makedirs(student_basedir, exist_ok=True)
+
+        # create data
+        os.system(" ".join(["python3", data_gen_script, student]))
+
+        # copy ipynb
+        shutil.copy2(
+            os.path.join(experiment, nb_filename),
+            os.path.join(student_basedir, nb_filename)
+        )
+
+    # No need to copy the interactive notebook, it is already in place.
+
+    # create pdf
+    os.system(" ".join(["python3", pdf_gen_script]))
