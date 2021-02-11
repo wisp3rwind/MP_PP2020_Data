@@ -18,7 +18,7 @@ Datengenerierungsprogramm für Med/Dent Physikpraktikum SS2020
     3. Zum löschen aller Studentendaten "python3 clearData.py" ausführen.
 
 
-2. Benötigte Packages: NumPy, SciPy, MatplotLib, ReportLab, os, shutil, sys
+2. Benötigte Packages: NumPy, SciPy, MatplotLib, ReportLab
    Sollte alles standardmäßig vorhanden sein.
 
 3. Bekannte Fehler: Bei der Konversation von float -> string kommt es manchmal dazu, dass z.b. 12.3 dann als "12.2999999999999993" oder "12.30000000000000003" angegeben wird. Ist ein bisschen hässlich.
